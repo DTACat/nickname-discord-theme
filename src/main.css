@@ -1,0 +1,10 @@
+[class^="username"] {
+	font-size: 0;
+	font-size: var(--nickname);
+}
+
+
+[class^="username"]::after {
+	content: var(--nickname);
+	font-size: 1rem;
+}

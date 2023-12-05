@@ -1,0 +1,21 @@
+/*
+ * TODO: Theme attributes
+ */
+
+@import url("https://raw.githubusercontent.com/DTACat/nickname-discord-theme/main/src/main.css");
+
+/* Default nickname, applied to all users */
+:root {
+	/* revert uses their actual name */
+	--nickname: revert;
+}
+
+/* Change own name */
+[data-is-self="true"] {
+	--nickname: "Me";
+}
+
+/* Change specific user's nickname */
+[data-author-id="<user-id>"] {
+	--nickname: "name";
+}
