@@ -1,8 +1,13 @@
-[class^="username"] {
-	font-size: 0;
-	font-size: var(--nickname);
+@property --nickname {
+	syntax: "<string> | 1";
+	inherits: true;
+	initial-value: 1;
 }
 
+[class^="username"] {
+	counter-reset: nickname-unset var(--nickname);
+	font-size: calc((1 - counter(nickname-unset)) * 1rem);
+}
 
 [class^="username"]::after {
 	content: var(--nickname);

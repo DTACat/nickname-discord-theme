@@ -6,8 +6,9 @@
 
 /* Default nickname, applied to all users */
 :root {
-	/* revert uses their actual name */
-	--nickname: revert;
+	/* By leaving unset, normal name will be shown.
+	 * Uncomment to set */
+	/* --nickname: "name"; */
 }
 
 /* Change own name */
