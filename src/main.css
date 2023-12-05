@@ -1,15 +1,20 @@
-@property --nickname {
-	syntax: "<string> | 1";
+@property --override-nickname {
+	syntax: "0 | 1";
 	inherits: true;
-	initial-value: 1;
+	initial-value: 0;
+}
+
+@property --nickname {
+	syntax: "<string> | none";
+	inherits: true;
+	initial-value: none;
 }
 
 [class^="username"] {
-	counter-reset: nickname-unset var(--nickname);
-	font-size: calc((1 - counter(nickname-unset)) * 1rem);
+	font-size: calc((1 - var(--override-nickname)) * 1rem);
 }
 
 [class^="username"]::after {
 	content: var(--nickname);
-	font-size: 1rem;
+	font-size: calc(var(--override-nickname) * 1rem);
 }

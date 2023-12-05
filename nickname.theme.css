@@ -6,17 +6,18 @@
 
 /* Default nickname, applied to all users */
 :root {
-	/* By leaving unset, normal name will be shown.
-	 * Uncomment to set */
-	/* --nickname: "name"; */
+	/* override-nickname of 0 will use user's default name */
+	--override-nickname: 0;
 }
 
 /* Change own name */
 [data-is-self="true"] {
+	--override-nickname: 1;
 	--nickname: "Me";
 }
 
 /* Change specific user's nickname */
 [data-author-id="<user-id>"] {
+	--override-nickname: 1;
 	--nickname: "name";
 }
